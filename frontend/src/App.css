@@ -1,0 +1,255 @@
+:root {
+  --ph-blue: #0038a8;
+  --ph-red: #ce1126;
+  --ph-gold: #fcd116;
+  --ph-white: #ffffff;
+  --bg-light: #f8fafc;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+  --radius: 12px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Header & Branding */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 3rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.seal-mini {
+  width: 50px;
+  height: 50px;
+  background: var(--ph-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.6rem;
+  color: var(--ph-blue);
+  text-align: center;
+  border: 2px solid var(--ph-blue);
+}
+
+.brand h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--ph-blue);
+  letter-spacing: -0.5px;
+}
+
+/* Main Layout */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 850px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* Cards */
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  border: 1px solid #e2e8f0;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ph-blue);
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--ph-blue);
+  ring: 2px solid rgba(0, 56, 168, 0.1);
+}
+
+button {
+  width: 100%;
+  padding: 0.875rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s;
+  border: none;
+}
+
+button.primary {
+  background: var(--ph-blue);
+  color: white;
+}
+
+button.secondary {
+  background: var(--ph-gold);
+  color: var(--ph-blue);
+}
+
+button:hover { opacity: 0.95; }
+button:active { transform: scale(0.98); }
+button:disabled { background: #83bd37; cursor: not-allowed; }
+
+/* The ID Card Component */
+.id-credential {
+  width: 100%;
+  max-width: 400px;
+  background: linear-gradient(135deg, #fff 0%, #f0f7ff 100%);
+  border-radius: 16px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+  margin: 1.5rem auto;
+}
+
+.id-credential::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 8px;
+  background: linear-gradient(90deg, var(--ph-blue) 0%, var(--ph-red) 100%);
+}
+
+.id-content {
+  padding: 1.5rem;
+}
+
+.id-top {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.id-top h4 {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.id-top h3 {
+  margin: 0.25rem 0;
+  font-size: 1rem;
+  color: var(--ph-blue);
+}
+
+.id-body {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.id-photo-placeholder {
+  width: 100px;
+  height: 100px;
+  background: #e2e8f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #94a3b8;
+}
+
+.id-info p {
+  margin: 0 0 0.75rem 0;
+}
+
+.id-label {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.id-value {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin-top: 1rem;
+}
+
+.status-valid { background: #dcfce7; color: #166534; }
+.status-invalid { background: #fee2e2; color: #991b1b; }
+
+/* Utility */
+.text-center { text-align: center; }
+.mt-4 { margin-top: 1rem; }
+.wallet-tag {
+  background: #f1f5f9;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-family: monospace;
+}
+.empty-state {
+    color: var(--text-muted);
+    text-align: center;
+    padding: 2rem;
+    border: 2px dashed #e2e8f0;
+    border-radius: var(--radius);
+}
